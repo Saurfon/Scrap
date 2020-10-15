@@ -178,7 +178,7 @@ function Scrap:IsFiltered(...)
 end
 
 function Scrap:IsGray(quality)
-	return quality == LE_ITEM_QUALITY_POOR
+	return quality and quality == _G.Enum.ItemQuality.Poor
 end
 
 function Scrap:IsLowLevel(level)
@@ -186,7 +186,7 @@ function Scrap:IsLowLevel(level)
 end
 
 function Scrap:IsStandardQuality(quality)
-	return quality >= LE_ITEM_QUALITY_UNCOMMON and quality <= LE_ITEM_QUALITY_EPIC
+	return quality and quality >= _G.Enum.ItemQuality.Uncommon and quality <= _G.Enum.ItemQuality.Epic
 end
 
 function Scrap:IsCombatItem(class, subclass, slot)
